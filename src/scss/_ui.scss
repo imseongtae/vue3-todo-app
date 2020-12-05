@@ -1,0 +1,15 @@
+
+.form {
+  &__title {
+    color: dodgerblue;
+    font-size: 2rem;
+  }
+	&__input {
+		height: 3rem;
+		line-height: 3rem;
+  }
+  &__submit-btn {
+    height: 3rem;
+		line-height: 3rem;
+  }
+}
