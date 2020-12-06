@@ -37,3 +37,18 @@ yarn add -D @vue/cli-plugin-babel @vue/cli-plugin-eslint @vue/cli-plugin-unit-je
 npm install vue-router@4.0.0-beta.5
 ```
 
+
+## 속성 상속을 제어하는 inheritAttrs
+부모 컴포넌트의 요소에 속성을 추가하면 자녀 컴포넌트의 루투 요소에 속성이 추가되는데, 이를 속성 상속(attribute inheritance)이라고 한다. 아래와 같이 inheritAttrs: false를 주어서 상속을 막는 문법이 `2.4.0` 이후 추가됨
+
+```js
+export default {
+	inheritAttrs: false,
+	props: {
+		todoItems: {
+			type: Array,
+			required: true,
+		},
+  },
+}
+```
