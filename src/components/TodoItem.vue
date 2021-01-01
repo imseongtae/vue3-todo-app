@@ -1,20 +1,23 @@
 <template>
-	<div>
-		<li v-for="(item, index) in todoItems" :key="index" class="todo-item">
-			<p>
-				{{ item.content }}
-				<button @click="remove(index)">❌</button>
-			</p>
-		</li>
-	</div>
+	<li class="todo-item">
+		<p class="todo-item__content">
+			{{ content }}
+		</p>
+		<button class="todo-item__btn" @click="remove(index)">❌</button>
+	</li>
 </template>
 
 <script>
 export default {
+	// 스타일 상속을 막음
 	inheritAttrs: false,
 	props: {
-		todoItems: {
-			type: Array,
+		index: {
+			type: Number,
+			required: true,
+		},
+		content: {
+			type: String,
 			required: true,
 		},
 	},
