@@ -1,9 +1,9 @@
 <template>
 	<div class="todo-wrapper">
 		<form @submit.prevent="onSubmit" class="form">
-			<fieldset class="form__wrapper">
+			<fieldset class="form__fieldset">
 				<legend class="form__title">To Do App</legend>
-				<p class="todo-input">
+				<p class="form__input-container">
 					<input class="form__input" v-model="state.content" type="text" />
 					<button ref="$submitButton" class="form__submit-btn" type="submit">
 						추가 📌
@@ -12,11 +12,17 @@
 			</fieldset>
 		</form>
 		<ul class="todo-list">
-			<todo-item
-				class="todo-item"
-				:todo-items="state.todoList"
-				@remove="removeTodoItem"
-			/>
+			<!-- <div v-for="(items, date) of list" :key="date"> -->
+			<!-- 테스트를 위해 template에서 한 번 더 데이터를 꺼내서 반복해봄 -->
+			<template v-for="items in state.todoList">
+				<todo-item
+					v-for="item of items"
+					:key="item.id"
+					:index="item.id"
+					:content="item.content"
+					@remove="removeTodoItem"
+				/>
+			</template>
 		</ul>
 	</div>
 </template>
@@ -31,7 +37,17 @@ export default {
 	components: {
 		TodoItem,
 	},
-
+	data() {
+		return {
+			list: {
+				'2020-12-26': [
+					{ content: 'content-1', id: 1 },
+					{ content: 'content-2', id: 2 },
+				],
+				'2020-12-28': [{ content: 'content-1', id: 1 }],
+			},
+		};
+	},
 	setup() {
 		const todo = inject('todo');
 		const state = reactive({
@@ -61,7 +77,4 @@ export default {
 
 <style lang="scss" scoped>
 // inheritAttrs test
-.todo-item {
-	border: 3px solid dodgerblue;
-}
 </style>
