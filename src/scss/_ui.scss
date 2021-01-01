@@ -3,13 +3,45 @@
   &__title {
     color: dodgerblue;
     font-size: 2rem;
+    font-weight: 700;
+  }
+  &__input-container {
+		height: 3rem;
+    line-height: 3rem;
+    display: flex;
   }
 	&__input {
-		height: 3rem;
-		line-height: 3rem;
+		// height: 3rem;
+    // line-height: 3rem;
+    flex-grow: 1;
   }
   &__submit-btn {
-    height: 3rem;
-		line-height: 3rem;
+    // height: 3rem;
+    // line-height: 3rem;
+    border: none;
   }
+}
+
+.todo-list {
+  padding: 0;
+}
+.todo-item { 
+  list-style: none;
+  display: flex;
+  padding: 0 10px;
+  border: 1px solid #f3f3f3;
+  border-bottom: none;  
+  &:last-child {    
+    border: 1px solid #f3f3f3;
+  }
+  // &__content {
+
+  // }
+  &__btn {
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+    user-select: none;
+  }
+  
 }
