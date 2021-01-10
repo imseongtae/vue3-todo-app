@@ -29,7 +29,6 @@
 
 <script>
 import { reactive, inject } from 'vue';
-
 import TodoItem from '@/components/TodoItem.vue';
 
 export default {
@@ -74,7 +73,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-// inheritAttrs test
-</style>

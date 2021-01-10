@@ -1,12 +1,18 @@
 <template>
-	<div id="app">
+	<div id="app" class="max-w-screen-md mx-auto">
+		<app-header />
 		<router-view />
 	</div>
 </template>
 
 <script>
+import AppHeader from '@/components/AppHeader.vue';
+
 export default {
 	name: 'App',
+	components: {
+		AppHeader,
+	},
 };
 </script>
 
@@ -14,6 +20,7 @@ export default {
 @import '@/scss/_ui.scss';
 
 #app {
+	/* 
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -21,5 +28,6 @@ export default {
 	margin: 0 auto;
 	margin-top: 60px;
 	color: #2c3e50;
+	*/
 }
 </style>
