@@ -2,16 +2,20 @@
 	<div id="app" class="max-w-screen-md mx-auto">
 		<app-header />
 		<router-view />
+		<!-- tailwind component -->
+		<cta-section></cta-section>
 	</div>
 </template>
 
 <script>
 import AppHeader from '@/components/AppHeader.vue';
+import CtaSection from '@/components/CtaSection.vue';
 
 export default {
 	name: 'App',
 	components: {
 		AppHeader,
+		CtaSection,
 	},
 };
 </script>

@@ -16,7 +16,7 @@
 		</div>
 		<nav class="ml-auto mr-5">
 			<ul
-				class="w-full block flex-grow lg:flex lg:items-center lg:w-auto text-sm"
+				class="w-full block flex-grow md:flex md:items-center md:w-auto text-sm"
 			>
 				<li>
 					<a
